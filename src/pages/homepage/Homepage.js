@@ -1,10 +1,19 @@
 import React from 'react';
 import styles from './Homepage.module.scss';
 
+import Directory from '../../Components/directory/Directory';
+
 const Homepage = () => {
   return (
     <div className={styles.homepage}>
-      <div className={styles.directoryMenu}>
+      <Directory />
+    </div>
+  );
+};
+
+export default Homepage;
+
+/*       <div className={styles.directoryMenu}>
         <div className={styles.menuItem}>
           <div className={styles.content}>
             <h1 className={styles.title}>Hats</h1>
@@ -35,9 +44,5 @@ const Homepage = () => {
             <span className={styles.subtitle}>SHOP NOW</span>
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
-export default Homepage;
+      </div>;
+ */

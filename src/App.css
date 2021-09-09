@@ -1,3 +1,39 @@
+/* Fonts Styles Start */
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('./assets/fonts/OpenSansCondensed-Bold.woff') format('woff2'),
+    url('./assets/fonts/OpenSansCondensed-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('./assets/fonts/OpenSansCondensed-Light.woff2') format('woff2'),
+    url('./assets/fonts/OpenSansCondensed-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('./assets/fonts/OpenSansCondensed-LightItalic.woff2') format('woff2'),
+    url('./assets/fonts/OpenSansCondensed-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fonts Styles End */
+
+/* Globals Styles Start */
+
+body {
+  font-family: 'Open Sans Condensed';
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +72,9 @@
     transform: rotate(360deg);
   }
 }
+
+.large {
+  height: 370px !important  ;
+}
+
+/* Globals Styles End */
