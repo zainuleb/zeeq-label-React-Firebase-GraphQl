@@ -8,8 +8,8 @@ const Directory = () => {
   const directoryData = Data;
   return (
     <div className={styles.directoryMenu}>
-      {directoryData.map(({ title, imageUrl, id, size }) => (
-        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      {directoryData.map(({ id, ...otherSectionProps }) => (
+        <MenuItem key={id} {...otherSectionProps} />
       ))}
     </div>
   );

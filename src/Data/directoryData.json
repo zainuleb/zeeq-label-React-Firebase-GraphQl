@@ -1,7 +1,7 @@
 [
   {
     "title": "hats",
-    "imageUrl": "hats.png",
+    "imageUrl": "hats.jpg",
     "id": 1,
     "linkUrl": "shop/hats"
   },
@@ -26,7 +26,7 @@
   },
   {
     "title": "mens",
-    "imageUrl": "men.png",
+    "imageUrl": "men.jpg",
     "size": "large",
     "id": 5,
     "linkUrl": "shop/mens"
