@@ -1,6 +1,6 @@
 //Importing Packages
 import { useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./db/firebase/firebase.utils";
 
 //Import Redux
@@ -44,14 +44,24 @@ function App(props) {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/shop" component={Shop} />
-        <Route exact path="/sign" component={SignInUp} />
+        <Route
+          exact
+          path="/sign"
+          render={() =>
+            props.currentUser ? <Redirect to="/" /> : <SignInUp />
+          }
+        />
       </Switch>
     </div>
   );
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
