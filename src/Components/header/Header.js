@@ -16,9 +16,14 @@ const Header = ({ currentUser }) => {
 
   if (currentUser !== null && currentUser.currentUser !== null) {
     signBtn = (
-      <Link className={styles.option} to="/" onClick={() => auth.signOut()}>
-        Sign Out
-      </Link>
+      <>
+        <Link className={styles.option} to="/" currentUser={currentUser}>
+          Cart
+        </Link>
+        <Link className={styles.option} to="/" onClick={() => auth.signOut()}>
+          Sign Out
+        </Link>
+      </>
     );
   }
   return (

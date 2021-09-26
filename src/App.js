@@ -16,7 +16,10 @@ function App() {
 
   let unSubFromAuth = null;
 
+  console.log("currentuser", currentUser);
+
   useEffect(() => {
+    // eslint-disable-next-line
     unSubFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);

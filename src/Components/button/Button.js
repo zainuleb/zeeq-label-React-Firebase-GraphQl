@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Button.module.scss';
+import React from "react";
+import styles from "./Button.module.scss";
 
 const Button = ({ children, isGoogleSignIn, ...otherProps }) => {
   return (
