@@ -1,7 +1,12 @@
 //Importing Packages
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./db/firebase/firebase.utils";
+
+//Import Redux
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/actions/user.actions";
+
 //Importing Styles
 import "./App.scss";
 
@@ -11,12 +16,11 @@ import Homepage from "./pages/homepage/Homepage.js";
 import SignInUp from "./pages/sign/SignInUp";
 import Shop from "./pages/shop/Shop.js";
 
-function App() {
-  const [currentUser, setCurrentUser] = useState(null);
-
+function App(props) {
   let unSubFromAuth = null;
 
-  console.log("currentuser", currentUser);
+  const { setCurrentUser } = props;
+  console.log(setCurrentUser);
 
   useEffect(() => {
     // eslint-disable-next-line
@@ -27,7 +31,7 @@ function App() {
           setCurrentUser({ id: snapshot.id, ...snapshot.data() });
         });
       }
-      setCurrentUser({ currentUser: userAuth });
+      setCurrentUser(userAuth);
     });
     return () => {
       unSubFromAuth();
@@ -36,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header currentUser={currentUser} />
+      <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/shop" component={Shop} />
@@ -46,4 +50,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(null, mapDispatchToProps)(App);
