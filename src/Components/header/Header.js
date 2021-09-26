@@ -1,9 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Header.module.scss';
-import { ReactComponent as Logo } from '../../assets/logo/zeeqlogo.svg';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { auth } from "../../db/firebase/firebase.utils";
 
-const Header = () => {
+import styles from "./Header.module.scss";
+import { ReactComponent as Logo } from "../../assets/logo/zeeqlogo.svg";
+
+const Header = ({ currentUser }) => {
+  useEffect(() => {}, [currentUser]);
+
+  let signBtn = (
+    <Link className={styles.option} to="/sign">
+      Sign In/Up
+    </Link>
+  );
+
+  if (currentUser !== null && currentUser.currentUser !== null) {
+    signBtn = (
+      <Link className={styles.option} to="/" onClick={() => auth.signOut()}>
+        Sign Out
+      </Link>
+    );
+  }
   return (
     <div className={styles.header}>
       <Link className={styles.logoContainer} to="/">
@@ -16,9 +33,7 @@ const Header = () => {
         <Link className={styles.option} to="/contact">
           Contact
         </Link>
-        <Link className={styles.option} to="/sign">
-          Sign In/Up
-        </Link>
+        {signBtn}
       </div>
     </div>
   );

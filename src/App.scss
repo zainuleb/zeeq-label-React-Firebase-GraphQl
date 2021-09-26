@@ -1,26 +1,26 @@
 /* Fonts Styles Start */
 @font-face {
-  font-family: 'Open Sans Condensed';
-  src: url('./assets/fonts/OpenSansCondensed-Bold.woff') format('woff2'),
-    url('./assets/fonts/OpenSansCondensed-Bold.woff') format('woff');
+  font-family: "Open Sans Condensed";
+  src: url("./assets/fonts/OpenSansCondensed-Bold.woff") format("woff2"),
+    url("./assets/fonts/OpenSansCondensed-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans Condensed';
-  src: url('./assets/fonts/OpenSansCondensed-Light.woff2') format('woff2'),
-    url('./assets/fonts/OpenSansCondensed-Light.woff') format('woff');
+  font-family: "Open Sans Condensed";
+  src: url("./assets/fonts/OpenSansCondensed-Light.woff2") format("woff2"),
+    url("./assets/fonts/OpenSansCondensed-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans Condensed';
-  src: url('./assets/fonts/OpenSansCondensed-LightItalic.woff2') format('woff2'),
-    url('./assets/fonts/OpenSansCondensed-LightItalic.woff') format('woff');
+  font-family: "Open Sans Condensed";
+  src: url("./assets/fonts/OpenSansCondensed-LightItalic.woff2") format("woff2"),
+    url("./assets/fonts/OpenSansCondensed-LightItalic.woff") format("woff");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -31,7 +31,7 @@
 /* Globals Styles Start */
 
 body {
-  font-family: 'Open Sans Condensed';
+  font-family: "Open Sans Condensed";
   padding: 20px 60px;
 }
 
@@ -64,7 +64,14 @@ $main-color: black;
   @include shrinkLabel();
 }
 
+.googleSignIn {
+  background-color: #4285f4;
+  color: white;
 
+  &:hover {
+    background-color: #357ae8;
+  }
+}
 
 .large {
   height: 370px !important  ;
