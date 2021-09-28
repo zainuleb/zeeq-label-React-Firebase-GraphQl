@@ -4,6 +4,14 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
+  position: relative;
+
+  .invBtn {
+    width: 53%;
+    opacity: 0.7;
+    position: absolute;
+    display: none;
+  }
 
   .itemImage {
     width: 100%;
@@ -11,6 +19,17 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+  }
+
+  &:hover {
+    .itemImage {
+      opacity: 0.8;
+    }
+
+    .invBtn {
+      opacity: 0.95;
+      display: flex;
+    }
   }
 
   .itemFooter {
@@ -25,7 +44,7 @@
       margin-bottom: 15px;
     }
 
-    .itemPrice{
+    .itemPrice {
       width: 10%;
     }
   }

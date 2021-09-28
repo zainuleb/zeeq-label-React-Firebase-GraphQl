@@ -1,5 +1,6 @@
-import React from 'react';
-import styles from './CollectionItem.module.scss';
+import React from "react";
+import styles from "./CollectionItem.module.scss";
+import InvButton from "../button/InvButton";
 
 const CollectionItem = ({ id, name, imageUrl, price }) => {
   return (
@@ -11,6 +12,9 @@ const CollectionItem = ({ id, name, imageUrl, price }) => {
       <div className={styles.itemFooter}>
         <span className={styles.itemName}>{name} </span>
         <span className={styles.itemPrice}>{price} </span>
+      </div>
+      <div className={styles.invBtn}>
+        <InvButton>Add to Cart</InvButton>
       </div>
     </div>
   );
