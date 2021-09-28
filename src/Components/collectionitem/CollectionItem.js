@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./CollectionItem.module.scss";
 import InvButton from "../button/InvButton";
 
-const CollectionItem = ({ id, name, imageUrl, price }) => {
+import { connect } from "react-redux";
+import { addItem } from "../../redux/actions/cart.actions.js";
+
+const CollectionItem = ({ item, addItem }) => {
+  const { name, price, imageUrl } = item;
+  console.log(addItem);
   return (
     <div className={styles.collectionItem}>
       <div
@@ -14,10 +19,14 @@ const CollectionItem = ({ id, name, imageUrl, price }) => {
         <span className={styles.itemPrice}>{price} </span>
       </div>
       <div className={styles.invBtn}>
-        <InvButton>Add to Cart</InvButton>
+        <InvButton onClick={() => addItem(item)}>Add to Cart</InvButton>
       </div>
     </div>
   );
 };
 
-export default CollectionItem;
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
+});
+
+export default connect(null, mapDispatchToProps)(CollectionItem);
