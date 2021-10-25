@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.styles.scss";
+import "./header.styles.scss";
 import { Link } from "react-router-dom";
 
 import CartIcon from "../cart-icon/cart-icon.component";
