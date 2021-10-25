@@ -1,10 +1,10 @@
 import React from "react";
+import "./Header.styles.scss";
 import { Link } from "react-router-dom";
 
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-import "./header.styles.scss";
 
 import { connect } from "react-redux";
 import { auth } from "../../firebase/firebase.utils";
