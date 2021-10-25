@@ -8,7 +8,7 @@ import { selectCurrentUser } from "./redux/user/user.selector.js";
 import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
-import Header from "./Components/header/header.component.jsx";
+import Header from "./Components/header/Header.js";
 import ShopPage from "./pages/shop/shop.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Checkout from "./pages/checkout/Checkout";
